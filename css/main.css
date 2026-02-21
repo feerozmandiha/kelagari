@@ -1,0 +1,254 @@
+
+/* ========== متغیرهای اصلی ========== */
+:root {
+    /* رنگ‌های اصلی (Terracotta) - لطیف‌تر و کمرنگ‌تر */
+    --terracotta-light: #fbc4a0;  /* روشن‌تر و لطیف‌تر */
+    --terracotta-medium: #e0a185;  /* ملایم‌تر */
+    --terracotta-dark: #6b4a3a;    /* تیره اما نرم‌تر */
+    --terracotta-deep: #4d362b;     /* عمیق‌تر */
+    
+    /* رنگ‌های خاکی - شفاف‌تر و روشن‌تر */
+    --earth-cream: #fff9f2;         /* کرم بسیار روشن */
+    --earth-sand: #faf0e8;          /* شنی ملایم */
+    --earth-clay: #f0ded3;          /* رسی لطیف */
+    
+    /* رنگ‌های اثیری - شفافیت بیشتر */
+    --ether-white: rgba(255, 255, 255, 0.95);
+    --ether-glass: rgba(255, 250, 245, 0.4);
+    --ether-shadow: rgba(107, 74, 58, 0.06);  /* سایه بسیار ملایم */
+    
+    /* حاشیه و سایه - نازک‌تر و محوتر */
+    --border-subtle: 1px solid rgba(107, 74, 58, 0.04);
+    --shadow-soft: 0 8px 25px -12px rgba(107, 74, 58, 0.08);
+    --shadow-medium: 0 15px 35px -18px rgba(107, 74, 58, 0.12);
+    
+    /* فاصله‌ها (بدون تغییر) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    
+    /* گردی گوشه‌ها - نرم‌تر */
+    --radius-sm: 12px;      /* افزایش */
+    --radius-md: 20px;       /* افزایش */
+    --radius-lg: 28px;       /* افزایش */
+    --radius-xl: 36px;       /* افزایش */
+    --radius-full: 9999px;
+    
+    /* فونت‌ها */
+    --font-primary: 'Vazirmatn', 'Inter', sans-serif;
+}
+
+/* ========== ریست و پایه ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: #ffffff;  /* سفید مطلق */
+    color: var(--terracotta-dark);
+    line-height: 1.7;           /* افزایش فاصله خطوط */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== کانتینر ========== */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-2xl);
+    }
+}
+
+/* ========== تایپوگرافی ========== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+.section-title {
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    font-weight: 600;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--terracotta-light);
+    border-radius: var(--radius-sm);
+}
+
+/* ========== دکمه‌ها ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta-medium));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--terracotta-light);
+    color: var(--terracotta-dark);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: var(--terracotta-light);
+    color: white;
+}
+
+.btn-text {
+    background: transparent;
+    color: var(--terracotta-dark);
+    box-shadow: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.btn-text:hover {
+    color: var(--terracotta-light);
+    gap: var(--spacing-md);
+}
+
+.btn i {
+    font-size: 0.9em;
+}
+
+/* ========== یوتیلیتی کلاس‌ها ========== */
+.text-gradient {
+    background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: var(--ether-glass);
+    backdrop-filter: blur(10px);
+    border: var(--border-subtle);
+}
+
+/* ========== انیمیشن‌ها ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* انیمیشن‌های نوتیفیکیشن */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}

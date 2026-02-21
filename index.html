@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="کلاگری - پلتفرم تخصصی طراحی و چاپ سه‌بعدی با اصالت کهن"
+    />
+    <meta
+      name="keywords"
+      content="چاپ سه‌بعدی, طراحی سه‌بعدی, مدل سه‌بعدی, پرینتر سه‌بعدی"
+    />
+    <meta name="author" content="Kelageri Team" />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- فونت آیکون (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- favicon - آیکون مرورگر -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fda170'>🏺</text></svg>"
+    />
+
+    <!-- CSS اصلی -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Three.js برای نمایشگر سه‌بعدی -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.174.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.174.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <title>کلاگری | پلتفرم تخصصی چاپ سه‌بعدی</title>
+  </head>
+  <body>
+    <!-- هدر -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="/">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </a>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <nav class="desktop-menu">
+          <ul>
+            <li><a href="#">خانه</a></li>
+            <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+            <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+            <li>
+              <a href="http://farl.ir/kelagari/contact.html">تماس با ما</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- آیکون‌ها -->
+        <div class="header-actions">
+          <button class="icon-btn" id="searchBtn" aria-label="جستجو">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="icon-btn" id="profileBtn" aria-label="پروفایل">
+            <i class="fas fa-user"></i>
+          </button>
+
+          <!-- منوی همبرگری (موبایل) -->
+          <button class="menu-toggle" id="menuToggle" aria-label="منو">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- منوی موبایل -->
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="#" class="active">خانه</a></li>
+          <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+          <li><a href="#">انجمن</a></li>
+          <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+      <!-- بخش Hero -->
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <span class="hero-subtitle">کِلاگَری</span>
+            <h1 class="hero-title">
+              از خاک تا <span>اثیر</span><br />
+              از ایده تا <span>شیء</span>
+            </h1>
+            <p class="hero-description">
+              پلتفرم تخصصی طراحی، اشتراک و چاپ سه‌بعدی با اصالت کهن
+            </p>
+            <a
+              href="http://farl.ir/kelagari/library.html"
+              class="btn btn-primary hero-cta"
+            >
+              کاوش در کتابخانه
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="hero-3d" id="hero3dContainer">
+            <div class="placeholder-3d" id="hero3dPlaceholder">
+              <i class="fas fa-cube"></i>
+              <span>نمونه سه‌بعدی تعاملی</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- بخش دسته‌بندی‌ها -->
+      <section class="categories">
+        <div class="container">
+          <h2 class="section-title">دسته‌بندی‌های پرطرفدار</h2>
+
+          <div class="category-grid" id="categoryGrid">
+            <!-- کارت‌های دسته‌بندی با JavaScript اضافه می‌شوند -->
+          </div>
+        </div>
+      </section>
+
+      <!-- بخش محصولات محبوب -->
+      <section class="popular-products">
+        <div class="container">
+          <h2 class="section-title">محبوب‌ترین مدل‌ها</h2>
+
+          <div class="product-grid" id="productGrid">
+            <!-- کارت‌های محصول با JavaScript اضافه می‌شوند -->
+          </div>
+
+          <div class="view-all-container">
+            <a href="http://farl.ir/kelagari/library.html" class="btn btn-text">
+              مشاهده همه مدل‌ها
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- بخش طراحان برتر -->
+      <section class="top-designers">
+        <div class="container">
+          <h2 class="section-title">طراحان برتر</h2>
+
+          <div class="designer-scroll" id="designerScroll">
+            <!-- کارت‌های طراحان با JavaScript اضافه می‌شوند -->
+          </div>
+        </div>
+      </section>
+
+      <!-- بخش خبرنامه -->
+      <section class="newsletter">
+        <div class="container newsletter-container">
+          <h3 class="newsletter-title">از جدیدترین مدل‌ها با‌خبر شو!</h3>
+          <p class="newsletter-description">
+            با عضویت در خبرنامه، اولین نفری باش که از مدل‌های جدید و تخفیف‌ها
+            مطلع می‌شوی.
+          </p>
+
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="ایمیل خود را وارد کنید" required />
+            <button type="submit" class="btn btn-primary">عضویت</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-logo">
+          <div class="logo">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </div>
+          <p class="footer-slogan">از خاک تا اثیر، از ایده تا شیء</p>
+
+          <div class="social-links">
+            <a href="#" aria-label="اینستاگرام"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="لینکدین"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="توییتر"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>لینک‌های سریع</h4>
+            <ul>
+              <li>
+                <a href="http://farl.ir/kelagari/library.html">کتابخانه</a>
+              </li>
+              <li><a href="#">انجمن</a></li>
+              <li>
+                <a href="http://farl.ir/kelagari/about.html">درباره ما</a>
+              </li>
+              <li>
+                <a href="http://farl.ir/kelagari/contact.html">تماس با ما</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>پشتیبانی</h4>
+            <ul>
+              <li><a href="#">سوالات متداول</a></li>
+              <li><a href="#">راهنمای استفاده</a></li>
+              <li><a href="#">حریم خصوصی</a></li>
+              <li><a href="#">قوانین و مقررات</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>ارتباط با ما</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@kelageri.com</li>
+              <li><i class="fas fa-phone"></i> 09124533878</li>
+              <li><i class="fas fa-map-marker-alt"></i> تهران، ایران</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© ۱۴۰۴ کِلاگَری. تمامی حقوق محفوظ است.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- اسکریپت‌های جاوااسکریپت -->
+    <script type="module" src="js/three-viewer.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

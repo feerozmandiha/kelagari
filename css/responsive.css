@@ -1,0 +1,182 @@
+/* ========== ریسپانسیو برای موبایل (زیر 768px) ========== */
+
+@media (max-width: 767px) {
+    /* تنظیمات عمومی */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* هدر */
+    .header-container {
+        height: 60px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-3d {
+        height: 250px;
+    }
+    
+    /* دسته‌بندی‌ها */
+    .category-grid {
+        gap: var(--spacing-sm);
+    }
+    
+    .category-card {
+        padding: var(--spacing-md);
+    }
+    
+    .category-icon {
+        font-size: 2.5rem;
+    }
+    
+    /* محصولات */
+    .product-grid {
+        gap: var(--spacing-md);
+    }
+    
+    .product-image {
+        height: 150px;
+    }
+    
+    /* خبرنامه */
+    .newsletter-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .newsletter-title {
+        font-size: 1.25rem;
+    }
+    
+    /* فوتر */
+    .footer {
+        background: #ffffff !important;
+        border-top: 1px solid rgba(107, 74, 58, 0.03);
+    }
+    
+    .footer-logo .logo a {
+        color: var(--terracotta-dark);
+    }
+    
+    .footer-slogan {
+        color: var(--terracotta-dark);
+        opacity: 0.6;
+    }
+    
+    
+    .footer-column h4 {
+        color: var(--terracotta-dark);
+        opacity: 0.8;
+    }
+    
+    .footer-column a,
+    .footer-column li {
+        color: var(--terracotta-dark);
+        opacity: 0.6;
+    }
+    
+    .footer-bottom {
+        color: var(--terracotta-dark);
+        opacity: 0.4;
+    }
+    
+    /* آیکون‌های اجتماعی کوچک‌تر */
+    .social-links a {
+        background: rgba(107, 74, 58, 0.03);
+        color: var(--terracotta-dark);
+    }
+}
+
+/* ========== تبلت (768px تا 1024px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Hero */
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .hero-3d {
+        height: 350px;
+    }
+    
+    /* محصولات */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-image {
+        height: 180px;
+    }
+}
+
+/* ========== دسکتاپ بزرگ (بالای 1440px) ========== */
+@media (min-width: 1440px) {
+    .container {
+        padding: 0 var(--spacing-3xl);
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hero-3d {
+        height: 450px;
+    }
+}
+
+/* ========== حالت چاپ ========== */
+@media print {
+    .header,
+    .footer,
+    .newsletter,
+    .hero-cta {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* ========== RTL تنظیمات ویژه ========== */
+[dir="rtl"] .btn i {
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .product-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .newsletter-form {
+    direction: rtl;
+}
+
+/* ========== حالت تاریک (اختیاری برای آینده) ========== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --earth-cream: #2b150e;
+        /* --terracotta-dark: #faf7f2; */
+        --ether-white: rgba(30, 30, 30, 0.9);
+    }
+}

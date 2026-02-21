@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="کلاگری - پلتفرم تخصصی طراحی و چاپ سه‌بعدی با اصالت کهن"
+    />
+    <meta
+      name="keywords"
+      content="چاپ سه‌بعدی, طراحی سه‌بعدی, مدل سه‌بعدی, پرینتر سه‌بعدی"
+    />
+    <meta name="author" content="Kelageri Team" />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- favicon - آیکون مرورگر -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fda170'>🏺</text></svg>">
+
+    <!-- فونت آیکون (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- CSS اصلی -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Three.js برای نمایشگر سه‌بعدی -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.174.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.174.0/examples/jsm/"
+        }
+      }
+    </script>
+    <title>کتابخانه مدل‌ها | کلاگری</title>
+</head>
+<body>
+    <!-- هدر -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="#">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </a>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <nav class="desktop-menu">
+          <ul>
+            <li><a href="http://farl.ir/kelagari/index.html">خانه</a></li>
+            <li><a href="#" class="active">کتابخانه</a></li>
+            <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+            <li><a href="http://farl.ir/kelagari/contact.html">تماس با ما</a></li>
+          </ul>
+        </nav>
+
+        <!-- آیکون‌ها -->
+        <div class="header-actions">
+          <button class="icon-btn" id="searchBtn" aria-label="جستجو">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="icon-btn" id="profileBtn" aria-label="پروفایل">
+            <i class="fas fa-user"></i>
+          </button>
+
+          <!-- منوی همبرگری (موبایل) -->
+          <button class="menu-toggle" id="menuToggle" aria-label="منو">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- منوی موبایل -->
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="http://farl.ir/kelagari/index.html">خانه</a></li>
+          <li><a href="#" class="active">کتابخانه</a></li>
+          <li><a href="#">انجمن</a></li>
+          <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+        <!-- بخش جستجو و فیلتر -->
+        <section class="library-header">
+            <div class="container">
+                <h1>کتابخانه مدل‌های سه‌بعدی</h1>
+                
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="librarySearch" placeholder="جستجوی مدل‌ها...">
+                    </div>
+                    
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">همه</button>
+                        <button class="filter-btn" data-filter="free">رایگان</button>
+                        <button class="filter-btn" data-filter="popular">محبوب</button>
+                        <button class="filter-btn" data-filter="new">جدید</button>
+                    </div>
+                    
+                    <div class="category-filters">
+                        <select id="categorySelect">
+                            <option value="all">همه دسته‌بندی‌ها</option>
+                            <option value="art">هنر و دکور</option>
+                            <option value="industry">صنعت</option>
+                            <option value="tools">ابزار و یراق</option>
+                            <option value="models">ماکت و فیگور</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- گرید محصولات -->
+        <section class="library-grid">
+            <div class="container">
+                <div class="product-grid" id="libraryProductGrid">
+                    <!-- محصولات با JavaScript اضافه می‌شوند -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn active">۱</button>
+                    <button class="pagination-btn">۲</button>
+                    <button class="pagination-btn">۳</button>
+                    <button class="pagination-btn">۴</button>
+                    <button class="pagination-btn">۵</button>
+                </div>
+            </div>
+        </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-logo">
+          <div class="logo">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </div>
+          <p class="footer-slogan">از خاک تا اثیر، از ایده تا شیء</p>
+
+          <div class="social-links">
+            <a href="#" aria-label="اینستاگرام"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="لینکدین"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="توییتر"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>لینک‌های سریع</h4>
+            <ul>
+              <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+              <li><a href="#">انجمن</a></li>
+              <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+              <li><a href="http://farl.ir/kelagari/contact.html">تماس با ما</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>پشتیبانی</h4>
+            <ul>
+              <li><a href="#">سوالات متداول</a></li>
+              <li><a href="#">راهنمای استفاده</a></li>
+              <li><a href="#">حریم خصوصی</a></li>
+              <li><a href="#">قوانین و مقررات</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>ارتباط با ما</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@kelageri.com</li>
+              <li><i class="fas fa-phone"></i> 09124533878</li>
+              <li><i class="fas fa-map-marker-alt"></i> تهران، ایران</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© ۱۴۰۴ کلاگری. تمامی حقوق محفوظ است.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        // بارگذاری محصولات بیشتر برای کتابخانه
+        document.addEventListener('DOMContentLoaded', () => {
+            // می‌توانید از داده‌های بیشتر استفاده کنید
+            loadMoreProducts();
+        });
+        
+        function loadMoreProducts() {
+            const moreProducts = [
+                // محصولات اضافی
+            ];
+        }
+        
+
+        document.addEventListener('DOMContentLoaded', () => {
+        // کپی کردن محصولات از sampleData به کتابخانه
+        if (typeof sampleData !== 'undefined' && sampleData.products) {
+            const grid = document.getElementById('libraryProductGrid');
+            if (grid) {
+                grid.innerHTML = sampleData.products.map(product => `
+                    <div class="product-card" data-product-id="${product.id}">
+                        <div class="product-image">
+                            <i class="fas ${product.image}"></i>
+                            <button class="wishlist-btn" onclick="toggleWishlist(${product.id}, event)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-designer">طراح: ${product.designer}</p>
+                            <div class="product-rating">
+                                <span class="stars">
+                                    ${generateStars(product.rating)}
+                                </span>
+                                <span class="rating-count">${product.reviews.toLocaleString('fa-IR')} نظر</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price ${product.price === 'رایگان' ? 'free' : ''}">
+                                    ${product.price}
+                                </span>
+                                <button class="btn btn-text" onclick="addToCart(${product.id}, event)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>افزودن</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+    });
+    </script>
+</body>
+</html>

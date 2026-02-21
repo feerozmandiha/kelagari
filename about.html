@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="کلاگری - پلتفرم تخصصی طراحی و چاپ سه‌بعدی با اصالت کهن"
+    />
+    <meta
+      name="keywords"
+      content="چاپ سه‌بعدی, طراحی سه‌بعدی, مدل سه‌بعدی, پرینتر سه‌بعدی"
+    />
+    <meta name="author" content="Kelageri Team" />
+
+    <!-- فونت‌ها -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- فونت آیکون (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- favicon - آیکون مرورگر -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fda170'>🏺</text></svg>">
+
+    <!-- CSS اصلی -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Three.js برای نمایشگر سه‌بعدی -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.174.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.174.0/examples/jsm/"
+        }
+      }
+    </script>
+    <title>درباره ما | کلاگری</title>
+</head>
+<body>
+    <!-- هدر -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="/">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </a>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <nav class="desktop-menu">
+          <ul>
+            <li><a href="http://farl.ir/kelagari/index.html">خانه</a></li>
+            <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+            <li><a href="#" class="active">درباره ما</a></li>
+            <li><a href="http://farl.ir/kelagari/contact.html">تماس با ما</a></li>
+          </ul>
+        </nav>
+
+        
+        <!-- آیکون‌ها -->
+        <div class="header-actions">
+          <button class="icon-btn" id="searchBtn" aria-label="جستجو">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="icon-btn" id="profileBtn" aria-label="پروفایل">
+            <i class="fas fa-user"></i>
+          </button>
+
+          <!-- منوی همبرگری (موبایل) -->
+          <button class="menu-toggle" id="menuToggle" aria-label="منو">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- منوی موبایل -->
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="http://farl.ir/kelagari/index.html">خانه</a></li>
+          <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+          <li><a href="#">انجمن</a></li>
+          <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+        <!-- بخش عنوان صفحه -->
+        <section class="page-header">
+            <div class="container">
+                <h1>درباره کِلاگَری</h1>
+                <p>از خاک تا اثیر، از ایده تا شیء</p>
+            </div>
+        </section>
+
+        <!-- بخش داستان ما -->
+        <section class="about-story">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2>داستان کِلاگَری</h2>
+                        <p>کِلاگَری با الهام از هنر کهن سفالگری مازندران متولد شد. نام "کِلاگَری" ریشه در واژه‌ای مازندرانی به معنای سفالگری و کوزه‌گری دارد.</p>
+                        <p>ما معتقدیم همانطور که سفالگران گذشته از خاک، اثر می‌آفریدند، امروز نیز می‌توان با فناوری چاپ سه‌بعدی، ایده‌ها را به اشیاء تبدیل کرد.</p>
+                    </div>
+                    <div class="about-image">
+                        <div class="pottery-symbol">
+                            <i class="fas fa-3d-printing"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش تیم ما -->
+        <section class="our-team">
+            <div class="container">
+                <h2 class="section-title">تیم ما</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">👤</div>
+                        <h3>احمد فیروزمندی </h3>
+                        <p>مدیر پروژه</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">👩‍🎨</div>
+                        <h3> نرگس فیروزمندی</h3>
+                        <p>طراح ارشد</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">👨‍💻</div>
+                        <h3>محمد طهماسب نیا </h3>
+                        <p>توسعه‌دهنده ارشد</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش آمار -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">۱۰,۰۰۰+</span>
+                        <span class="stat-label">مدل سه‌بعدی</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">۵,۰۰۰+</span>
+                        <span class="stat-label">کاربر فعال</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">۵۰۰+</span>
+                        <span class="stat-label">طراح حرفه‌ای</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-logo">
+          <div class="logo">
+            <span class="logo-part1">کِلا</span>
+            <span class="logo-part2">گَری</span>
+          </div>
+          <p class="footer-slogan">از خاک تا اثیر، از ایده تا شیء</p>
+
+          <div class="social-links">
+            <a href="#" aria-label="اینستاگرام"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="لینکدین"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="توییتر"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>لینک‌های سریع</h4>
+            <ul>
+              <li><a href="http://farl.ir/kelagari/library.html">کتابخانه</a></li>
+              <li><a href="#">انجمن</a></li>
+              <li><a href="http://farl.ir/kelagari/about.html">درباره ما</a></li>
+              <li><a href="http://farl.ir/kelagari/contact.html">تماس با ما</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>پشتیبانی</h4>
+            <ul>
+              <li><a href="#">سوالات متداول</a></li>
+              <li><a href="#">راهنمای استفاده</a></li>
+              <li><a href="#">حریم خصوصی</a></li>
+              <li><a href="#">قوانین و مقررات</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>ارتباط با ما</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@kelageri.com</li>
+              <li><i class="fas fa-phone"></i> 09124533878</li>
+              <li><i class="fas fa-map-marker-alt"></i> تهران، ایران</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© ۱۴۰۴ کِلاگَری. تمامی حقوق محفوظ است.</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

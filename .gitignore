@@ -1,0 +1,25 @@
+# سیستم عامل
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ویرایشگرها
+.vscode/
+.idea/
+*.sublime-*
+
+# پوشه‌های موقت
+node_modules/
+temp/
+cache/
+
+# فایل‌های حساس
+.env
+*.log
+
+
+# مدل‌های حجیم (اختیاری - اگر نمی‌خواهید در گیت‌هاب آپلود شوند)
+models/*.stl
+models/*.glb
+models/*.obj
+!models/sample.stl  # اگر یک نمونه کوچک دارید
