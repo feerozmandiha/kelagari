@@ -94,6 +94,6 @@ const viewer = new Kelageri3DViewer('hero3dContainer', {
     --ether-shadow: rgba(107, 74, 58, 0.06);
 }
 
-بازگشت به صفحه اصلی
+[بازگشت به صفحه اصلی](../README.md)
 
 </div> ```
